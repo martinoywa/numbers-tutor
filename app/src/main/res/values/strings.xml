@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NumbersTutor</string>
+    <string name="write_numbers">
+        "Write\nNumbers"
+    </string>
+    <string name="read_numbers">
+        "Read\nNumbers"
+    </string>
+</resources>
