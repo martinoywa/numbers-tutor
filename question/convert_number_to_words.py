@@ -6,4 +6,5 @@ def convert_number_to_words(num):
         Takes in a number and returns it's
         associated string / word(s).
     """
-    return num2words(num)
+    words = num2words(num)
+    return " ".join(words.split("-")).replace(",", "")
