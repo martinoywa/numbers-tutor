@@ -61,4 +61,4 @@ jobs:
             pip install pytest num2words
         - name: Test with pytest
           run: |
-            pytest
+            pytest -v
