@@ -6,8 +6,6 @@ name: numbers tutor backend
 on:
   push:
     branches: [ backend ]
-  pull_request:
-    branches: [ development ]
 
 jobs:
   build:
