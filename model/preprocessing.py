@@ -12,7 +12,7 @@ def preprocessing(bytes):
     """
 
     transform = transforms.Compose([
-        transforms.Resize(28, 28),
+        transforms.Resize((28, 28)),
         transforms.ToTensor()
     ])
 
