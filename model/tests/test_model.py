@@ -5,9 +5,9 @@ from model.preprocessing import preprocessing
 from pathlib import Path
 from model.inference import inference
 
-
-with open("test_images/test_number.png", "rb") as f:
+with open("model/tests/test_images/test_number.png", "rb") as f:
     number_bytes = f.read()
+
 
 class TestModel(unittest.TestCase):
     def test_preprocessing(self):
@@ -31,8 +31,7 @@ class TestModel(unittest.TestCase):
         :return: assertions
         """
         # assert that checkpoints file is available
-        os.chdir("../")
-        path = Path("checkpoints/weights.pt")
+        path = Path("model/checkpoints/weights.pt")
         self.assertTrue(os.path.isfile(path))
 
     def test_inference(self):

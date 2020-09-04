@@ -44,7 +44,7 @@ def get_model():
     :return: model
     """
 
-    checkpoint = Path("../checkpoints/weights.pt")
+    checkpoint = Path("model/checkpoints/weights.pt")
     model = Net()
     model.load_state_dict(torch.load(checkpoint, map_location='cpu'), strict=False)
     model.eval()
