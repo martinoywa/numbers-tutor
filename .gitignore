@@ -1,6 +1,6 @@
+.idea
 .vscode/
 .env
 .venv
 __pycache__/
-.idea/
 .pytest_cache/
