@@ -11,7 +11,11 @@
 <body>
     <main class="content">
         <div class="question-section">
-            <h6>Say One Thousand</h6>
+            <h6>
+                {% if question %}
+                    {{ question }}
+                {%  endif %}
+            </h6>
         </div>
         <div class="speak-section">
             <i class="fas fa-microphone"></i>
