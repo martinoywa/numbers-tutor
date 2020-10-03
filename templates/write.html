@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Aim Mikel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/bbab150638.js" crossorigin="anonymous"></script>
+    <title>Write</title>
+    <link rel="stylesheet" href="../static/css/write.css" />
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        {% if question %}
+            {{ question }}
+        {%  endif %}
+      </header>
+      <div class="body">
+        <canvas id="canvas1"></canvas>
+        <canvas id="canvas2"></canvas>
+        <canvas id="canvas3"></canvas>
+        <canvas id="canvas4"></canvas>
+      </div>
+      <footer>
+        <h3>YOUR ANSWER</h3>
+        <form name="" id="" method="post" onsubmit="return false" autocomplete="off">
+          <input type="text" name="" id="" value="" placeholder="" />
+          <button type="submit">NEXT</button>
+        </form>
+      </footer>
+    </div>
+    <script src="../static/js/write.js"></script>
+  </body>
+</html>
