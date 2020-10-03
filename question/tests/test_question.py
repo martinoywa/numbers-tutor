@@ -40,20 +40,20 @@ class TestQuestion(unittest.TestCase):
             Tests the pose_question function.
         """
         number = 0
-        word = pose_question(number)
+        word = pose_question(number, "Write")
         self.assertEqual(word, 'Write number zero')
 
         number = 21
-        word = pose_question(number)
-        self.assertEqual(word, 'Write number twenty one')
+        word = pose_question(number, "Say")
+        self.assertEqual(word, 'Say number twenty one')
 
         number = 101
-        word = pose_question(number)
+        word = pose_question(number, "Write")
         self.assertEqual(word, 'Write number one hundred and one')
 
         number = 1999
-        word = pose_question(number)
-        self.assertEqual(word, 'Write number one thousand nine hundred and ninety nine')
+        word = pose_question(number, "Say")
+        self.assertEqual(word, 'Say number one thousand nine hundred and ninety nine')
 
 
 if __name__ == "__main__":
