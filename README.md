@@ -1,3 +1,13 @@
+# Task Update (Write Page only)
+
+- Write page UI
+- Write page Canvas
+- Convert to Image from Canvas
+- Model Section :heavy_check_mark:
+- Question Functionality :heavy_check_mark:
+- Compare Functionality
+
+
 # numbers-tutor
 Application for Teaching Reading and Writing Numbers
 
