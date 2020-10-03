@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from question import pick_number, pose_question
+
 app = Flask(__name__)
 
 
@@ -9,7 +11,9 @@ def index():
 
 @app.route("/write")
 def write():
-    return render_template("write.html")
+    number = pick_number.pick_number()
+    question = pose_question.pose_question(number)
+    return render_template("write.html", question=question)
 
 
 @app.route("/say")

@@ -12,7 +12,11 @@
   </head>
   <body>
     <div class="wrapper">
-      <header><i>WRITE ONE THOUSAND</i></header>
+      <header>
+        {% if question %}
+            {{ question }}
+        {%  endif %}
+      </header>
       <div class="body">
         <canvas id="canvas1"></canvas>
         <canvas id="canvas2"></canvas>
