@@ -18,14 +18,21 @@
             </h6>
         </div>
         <div class="speak-section">
-            <i class="fas fa-microphone"></i>
+            <button class="record fas fa-microphone">
+            </button>
+             <button class="stop">Stop</button>
         </div>
         <div class="answer-section">
-            <input type="text">
+            <h2>Answer</h2>
+            <h3>
+                {{ answer }}
+            </h3>
             <button class="send"> Next
                 
             </button>
         </div>
     </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='js/say.js') }}"></script>
 </body>
 </html>

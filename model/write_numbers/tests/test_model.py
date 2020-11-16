@@ -1,9 +1,9 @@
 import os
 import unittest
 import torch
-from model.preprocessing import preprocessing
+from model.write_numbers.preprocessing import preprocessing
 from pathlib import Path
-from model.inference import inference
+from model.write_numbers.inference import inference
 
 with open("model/tests/test_images/test_number.png", "rb") as f:
     number_bytes = f.read()

@@ -1,6 +1,6 @@
 import torch
-from model.preprocessing import preprocessing
-from model.model_architecture import get_model
+from model.write_numbers.preprocessing import preprocessing
+from model.write_numbers.model_architecture import get_model
 
 
 model = get_model()
