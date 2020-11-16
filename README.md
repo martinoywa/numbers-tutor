@@ -1,13 +1,3 @@
-# Task Update (Write Page only)
-
-- Write page UI
-- Write page Canvas
-- Convert to Image from Canvas
-- Model Section :heavy_check_mark:
-- Question Functionality :heavy_check_mark:
-- Compare Functionality
-
-
 # numbers-tutor
 Application for Teaching Reading and Writing Numbers
 
@@ -37,6 +27,6 @@ Has three sections. The `Question Functionality`, the `Model Section` and the `C
 
 - Question Functionality is responsible for creating the questions.
 
-- Model section is for prediction.
+- Model section is for prediction (image) / recognition (speech)
 
 - Compare compares the prediction with the real answer from question.
