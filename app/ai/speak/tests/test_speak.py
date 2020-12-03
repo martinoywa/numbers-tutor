@@ -1,5 +1,4 @@
 import unittest
-from pathlib import Path
 
 from app.ai.speak.audio_to_text import audio_to_text
 
