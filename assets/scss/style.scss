@@ -4,7 +4,7 @@ body {
     box-sizing: border-box;
 }
 
-.homepage {
+.bg {
     min-height: 100vh;
     width: 100%;
     background-image: url('../img/background.svg');
@@ -37,9 +37,14 @@ body {
         }
     }
 }
-
+.write_number {
+    text-align: center;
+    font-size: 26px;
+    text-decoration: underline;
+}
 canvas {
-    width: 150px;
-    height: 300px;
+    width: 500px;
+    height: 350px;
     border: 1px #000 solid;
+    background-color: bisque;
 }
