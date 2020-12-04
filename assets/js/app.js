@@ -9,15 +9,15 @@ window.addEventListener("load", () => {
   window.addEventListener("resize", resize);
 });
 
-const canvas = document.querySelector("#draw");
+const canvas = document.querySelector("#draw        ");
 
 // Context for the canvas for 2 dimensional operations
 const ctx = canvas.getContext("2d");
 
 // Resizes the canvas to the available size of the window.
 function resize() {
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
+  ctx.canvas.width = 500;
+  ctx.canvas.height = 350;
 }
 
 // Stores the initial position of the cursor
@@ -55,7 +55,7 @@ function sketch(event) {
   // to a round shape.
   ctx.lineCap = "round";
 
-  ctx.strokeStyle = "green";
+  ctx.strokeStyle = "black";
 
   // The cursor to start drawing
   // moves to this coordinate
@@ -73,3 +73,12 @@ function sketch(event) {
   // Draws the line.
   ctx.stroke();
 }
+
+const erase = () => {
+    let m = confirm("Want to clear");
+    if (m) {
+        ctx.clearRect(0, 0, w, h);
+        document.getElementById("draw").style.display = "none";
+    }
+
+};
