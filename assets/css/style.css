@@ -51,4 +51,10 @@ body {
   background-color: slateblue;
   border-radius: 5px;
 }
+
+canvas {
+  width: 150px;
+  height: 300px;
+  border: 1px #000 solid;
+}
 /*# sourceMappingURL=style.css.map */
