@@ -77,8 +77,7 @@ function sketch(event) {
 const erase = () => {
     let m = confirm("Want to clear");
     if (m) {
-        ctx.clearRect(0, 0, w, h);
-        document.getElementById("draw").style.display = "none";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
 };
