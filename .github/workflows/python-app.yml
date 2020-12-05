@@ -4,10 +4,8 @@
 name: Backend
 
 on:
-  push:
-    branches: [ development, backend ]
   pull_request:
-    branches: [ development ]
+    branches: [ backend ]
 
 jobs:
   build:
