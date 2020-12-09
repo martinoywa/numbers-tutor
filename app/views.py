@@ -1,10 +1,10 @@
-from flask import Blueprint
+from flask import Blueprint,render_template
 
 
-home = Blueprint("home", __name__)
-@home.route("/")
+home = Blueprint("home", __name__,template_folder='templates')
+@home.route("/index")
 def index():
-    return "Home Page"
+    return render_template('index.html')
 
 write = Blueprint("write", __name__)
 @write.route("/")
