@@ -1,0 +1,23 @@
+{
+  "name": "NumbersTutor",
+  "version": "1.0.0",
+  "description": "Create virtual environment ``` python3 -m venv .env ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindo-Joseph/numbers-tutor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mindo-Joseph/numbers-tutor/issues"
+  },
+  "homepage": "https://github.com/Mindo-Joseph/numbers-tutor#readme",
+  "devDependencies": {
+    "cypress": "^6.1.0"
+  }
+}
