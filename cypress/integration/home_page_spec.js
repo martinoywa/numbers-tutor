@@ -1,6 +1,6 @@
 describe('HomePage', () => {
     it('successfully loads', () => {
-        cy.visit('/index')
+        cy.visit('/')
     })
     it('contains the write button', () => {
         cy.get('.buttons').find('>a')
