@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../img/background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+    h2 {
+        margin: 0;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .buttons {
+        margin-top: 15px;
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+
+        .btn {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: slateblue;
+            border-radius: 5px;
+        }
+    }
+}
+.write_number {
+    text-align: center;
+    font-size: 26px;
+    text-decoration: underline;
+}
+canvas {
+    border: 1px #000 solid;
+    background-color: bisque;
+}
+h3 {
+    font-size: 32px;
+}
+.mic {
+    
+
+    .fas {
+        font-size: 80px;
+        color: #000;
+        margin-top: 10px;
+    }
+}
+
+#voice-input {
+    margin-top: 20px;
+}
