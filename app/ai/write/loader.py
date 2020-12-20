@@ -12,32 +12,100 @@ import torch.nn.functional as F
 class NNet(nn.Module):
     def __init__(self):
         super(NNet, self).__init__()
-        #convolutional layer
-        self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
-        self.conv2 = nn.Conv2d(32, 64, 3, padding=1)
-        # max pooling layer
-        self.pool = nn.MaxPool2d(2, 2)
-        # fully connected layers
-        self.fc1 = nn.Linear(64 * 7 * 7, 512)
-        self.fc2 = nn.Linear(512, 256)
-        self.fc3 = nn.Linear(256, 64)
-        self.fc4 = nn.Linear(64, 10)
-        # dropout
-        self.dropout = nn.Dropout(p=.5)
+
+        self._hidden1 = nn.Sequential(
+            nn.Conv2d(in_channels=3, out_channels=48, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=48),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden2 = nn.Sequential(
+            nn.Conv2d(in_channels=48, out_channels=64, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=64),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=1, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden3 = nn.Sequential(
+            nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=128),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden4 = nn.Sequential(
+            nn.Conv2d(in_channels=128, out_channels=160, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=160),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=1, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden5 = nn.Sequential(
+            nn.Conv2d(in_channels=160, out_channels=192, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=192),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden6 = nn.Sequential(
+            nn.Conv2d(in_channels=192, out_channels=192, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=192),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=1, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden7 = nn.Sequential(
+            nn.Conv2d(in_channels=192, out_channels=192, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=192),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden8 = nn.Sequential(
+            nn.Conv2d(in_channels=192, out_channels=192, kernel_size=5, padding=2),
+            nn.BatchNorm2d(num_features=192),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=1, padding=1),
+            nn.Dropout(0.2)
+        )
+        self._hidden9 = nn.Sequential(
+            nn.Linear(192 * 7 * 7, 3072),
+            nn.ReLU()
+        )
+        self._hidden10 = nn.Sequential(
+            nn.Linear(3072, 3072),
+            nn.ReLU()
+        )
+
+        self._digit_length = nn.Sequential(nn.Linear(3072, 7))
+        self._digit1 = nn.Sequential(nn.Linear(3072, 11))
+        self._digit2 = nn.Sequential(nn.Linear(3072, 11))
+        self._digit3 = nn.Sequential(nn.Linear(3072, 11))
+        self._digit4 = nn.Sequential(nn.Linear(3072, 11))
+        self._digit5 = nn.Sequential(nn.Linear(3072, 11))
 
     def forward(self, x):
-        # add sequence of convolutional and max pooling layers
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        # flatten image input
-        x = x.view(-1, 64 * 7 * 7)
-        # add hidden layer, with relu activation function
-        x = self.dropout(F.relu(self.fc1(x)))
-        x = self.dropout(F.relu(self.fc2(x)))
-        x = self.dropout(F.relu(self.fc3(x)))
-        x = F.log_softmax(self.fc4(x), dim=1)
-        
-        return x
+        x = self._hidden1(x)
+        x = self._hidden2(x)
+        x = self._hidden3(x)
+        x = self._hidden4(x)
+        x = self._hidden5(x)
+        x = self._hidden6(x)
+        x = self._hidden7(x)
+        x = self._hidden8(x)
+        x = x.view(x.size(0), 192 * 7 * 7)
+        x = self._hidden9(x)
+        x = self._hidden10(x)
+
+        length_logits = self._digit_length(x)
+        digit1_logits = self._digit1(x)
+        digit2_logits = self._digit2(x)
+        digit3_logits = self._digit3(x)
+        digit4_logits = self._digit4(x)
+        digit5_logits = self._digit5(x)
+
+        return length_logits, digit1_logits, digit2_logits, digit3_logits, digit4_logits, digit5_logits
 
 
 def model_loader(path):

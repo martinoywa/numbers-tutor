@@ -13,7 +13,7 @@ class TestWriteModule(unittest.TestCase):
             exists.
             :return: True if exists else False
         """
-        checkpoint = Path('app/ai/write/checkpoints/checkpoint.pt')
+        checkpoint = Path('app/ai/write/checkpoints/model-54000.pth')
         self.assertTrue(True, os.path.isfile(checkpoint))
 
     def test_model_loading(self):
@@ -37,7 +37,7 @@ class TestWriteModule(unittest.TestCase):
         pred = prediction(image)
         self.assertEqual(int, type(pred))
 
-    def test_inferencing_output(self):
+    def test_inferencing_output_single(self):
         """
             Assert that model makes correct
             predictions.
@@ -49,3 +49,16 @@ class TestWriteModule(unittest.TestCase):
             image = f.read()
         pred = prediction(image)
         self.assertEqual(3, pred)
+
+    def test_inferencing_output_multi(self):
+        """
+            Assert that model makes correct
+            predictions.
+            :return: True if match else False
+        """
+        test_image = Path('app/ai/write/tests/test_image/1000.png')
+
+        with open(test_image, "rb") as f:
+            image = f.read()
+        pred = prediction(image)
+        self.assertEqual(1000, pred)
