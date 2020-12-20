@@ -1,1 +1,1 @@
-*.pth filter=lfs diff=lfs merge=lfs -text
+app/ai/write/checkpoints/model-54000.pth filter=lfs diff=lfs merge=lfs -text
