@@ -1,8 +1,8 @@
 import os.path
 import unittest
 from pathlib import Path
-import torch
 
+from app.ai.write.loader import model_loader
 from app.ai.write.inference import prediction
 
 class TestWriteModule(unittest.TestCase):
@@ -22,7 +22,8 @@ class TestWriteModule(unittest.TestCase):
             being loaded without conflicts.
             :return: True if so else False
         """
-        pass
+        checkpoint = Path('app/ai/write/checkpoints/model-54000.pth')
+        self.assertIsNotNone(model_loader(checkpoint))
 
     def test_inferencing_type(self):
         """
