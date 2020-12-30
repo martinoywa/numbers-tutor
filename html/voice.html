@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Input</title>
-    <script src="https://kit.fontawesome.com/cc7e07711d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head> 
-<body class=''>
-    <main class="bg">
-        <h3>Say something</h3>
-        <a href="#" class="mic">
-            <i class="fas fa-microphone"></i>
-        </a>
-        <textarea id="voice-input" cols="100" rows="5" placeholder="Voice Input"></textarea>
-    </main>
-    
-</body>
+<html>
+  <head>
+    <title>Voice</title>
+    <script src="../assets/js/recorder.js"></script>
+    <script src="../assets/js/Fr.voice.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/speech.js"></script>
+  </head>
+  <body>
+    <h2>Record</h2>
+    <audio controls id="audio"></audio>
+    <div>
+      <a class="button recordButton" id="record">Record</a>
+      <a class="button recordButton" id="recordFor5">Record For 5 Seconds</a>
+      <a class="button disabled one" id="pause">Pause</a>
+      <a class="button disabled one" id="stop">Reset</a>
+    </div>
+    <br />
+    <div>
+      <input class="button" type="checkbox" id="live" />
+      <label for="live">Live Output</label>
+    </div>
+    <div data-type="wav">
+      <p>WAV Controls:</p>
+      <a class="button disabled one" id="play">Play</a>
+      <a class="button disabled one" id="download">Download</a>
+      <a class="button disabled one" id="base64">Base64 URL</a>
+      <a class="button disabled one" id="save">Upload to Server</a>
+    </div>
+    <canvas id="level" height="200" width="500"></canvas>
+    <style>
+      .button {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0px 5px;
+        padding: 5px 12px;
+        cursor: pointer;
+        outline: none;
+        font-size: 13px;
+        text-decoration: none !important;
+        text-align: center;
+        color: #fff;
+        background-color: #4d90fe;
+        background-image: linear-gradient(top, #4d90fe, #4787ed);
+        background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
+        background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
+        background-image: linear-gradient(top, #4d90fe, #4787ed);
+        border: 1px solid #4787ed;
+        box-shadow: 0 1px 3px #bfbfbf;
+      }
+      a.button {
+        color: #fff;
+      }
+      .button:hover {
+        box-shadow: inset 0px 1px 1px #8c8c8c;
+      }
+      .button.disabled {
+        box-shadow: none;
+        opacity: 0.7;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </body>
 </html>
