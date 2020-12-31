@@ -105,4 +105,36 @@ a.button{
   box-shadow:none;
   opacity:0.7;
 }
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  outline: none;
+  font-size: 13px;
+  text-decoration: none !important;
+  text-align: center;
+  color: #fff;
+  background-color: #4d90fe;
+  background-image: linear-gradient(top, #4d90fe, #4787ed);
+  background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
+  background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
+  background-image: linear-gradient(top, #4d90fe, #4787ed);
+  border: 1px solid #4787ed;
+  box-shadow: 0 1px 3px #bfbfbf;
+}
+a.button {
+  color: #fff;
+}
+.button:hover {
+  box-shadow: inset 0px 1px 1px #8c8c8c;
+}
+.button.disabled {
+  box-shadow: none;
+  opacity: 0.7;
+}
+#level {
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
