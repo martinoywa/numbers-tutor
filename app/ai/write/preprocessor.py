@@ -5,7 +5,9 @@ from PIL import Image
 
 def preprocess(image_bytes):
     """
-        Returns transformed image tensor.
+    Returns transformed image tensor.
+    :param image_bytes: image bytes from canvas.
+    :return: transformed image.
     """
     transform = transforms.Compose([
         transforms.Resize([64, 64]),

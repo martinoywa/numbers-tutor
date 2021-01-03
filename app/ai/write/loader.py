@@ -1,11 +1,10 @@
 """
-    Contains model architecture class and loader function.
-    NNet:   Defines the neural network architecture
-    model_loader(): Loads the trained model
+Contains model architecture class and loader function.
+NNet:  Defines the neural network architecture.
+model_loader(): Loads the trained model.
 """
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 
 # Architecture
@@ -110,7 +109,9 @@ class NNet(nn.Module):
 
 def model_loader(path):
     """
-        Returns loaded model.
+    Returns loaded model.
+    :param path: path to trained weights.
+    :return: loaded model.
     """
     model = NNet()
     model.load_state_dict(torch.load(path, map_location='cpu'), strict=False)
