@@ -9,20 +9,16 @@ class TestQuestionModule(unittest.TestCase):
 
     def test_pick_number(self):
         """
-        Assert that pick number returns
-        an integer
-        Returns:
-            True if int, else False
+        Assert that pick number returns an integer.
+        :return: True if int, else False.
         """
         number = pick_number()
         self.assertTrue(isinstance(number, int))
 
     def test_convert_number_to_words(self):
         """
-        Assert that number to words conversion
-        works correctly.
-        Returns:
-            True if so, False otherwise
+        Assert that number to words conversion works correctly.
+        :return: True if so, False otherwise.
         """
         number = 0
         word = convert_number_to_words(number)
@@ -42,10 +38,8 @@ class TestQuestionModule(unittest.TestCase):
 
     def test_pose_question(self):
         """
-        Asserts that returned question
-        and answer are correct
-        Returns:
-            True if correct, else False
+        Asserts that returned question and answer are correct.
+        :return: True if correct, else False.
         """
         number = 0
         action = "Write"
