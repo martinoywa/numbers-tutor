@@ -4,6 +4,11 @@ from app.question.convert_number_to_words import convert_number_to_words
 
 
 def audio_to_text(path):
+    """
+    Responsible for speech to text.
+    :param path: path to the recorded audio file.
+    :return: recognized digit in words.
+    """
     # initialize the recognizer
     r = sr.Recognizer()
     # open the file
