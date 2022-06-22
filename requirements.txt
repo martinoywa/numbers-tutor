@@ -19,7 +19,7 @@ Jinja2==2.11.2
 lockfile==0.12.2
 MarkupSafe==1.1.1
 msgpack==0.6.2
-numpy==1.19.4
+numpy==1.22.0
 packaging==20.3
 pep517==0.8.2
 Pillow==8.0.1
